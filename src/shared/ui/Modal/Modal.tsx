@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 import { classNames } from 'shared/lib/classNames/classNames';
 import React, {
@@ -68,12 +69,11 @@ export const Modal = (props: ModalProps) => {
 
     return (
         <Portal>
-            <div className={classNames(cls.Modal, mods, [className])}>
-                <div className={cls.overlay} onClick={closeHandler} role="banner">
+            <div className={classNames(cls.Modal, mods, [className, theme])}>
+                <div className={cls.overlay} onClick={closeHandler}>
                     <div
                         className={cls.content}
                         onClick={onContentClick}
-                        role="banner"
                     >
                         {children}
                     </div>
